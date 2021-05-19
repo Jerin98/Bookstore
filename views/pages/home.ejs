@@ -1,0 +1,104 @@
+<%-include('../partial/header')-%>    
+<div class=" container">    
+    <center>    
+    <div class="card" style="width: max-content;">    
+        <div class="card-body">    
+         <form action="/" method="POST"> 
+            <h1>NEW BOOK DETAILS</h1>   
+                <div class="row">    
+                  <div class="form-group col-md-12">    
+                    <input type="text" class="form-control" name="author" placeholder="Author Name" required>    
+                  </div>    
+                </div>    
+                <div class="row">    
+                    <div class="form-group col-md-12">    
+                        <input type="text" class="form-control" name="book" placeholder="Book Name" required>    
+                      </div>
+                </div>    
+                      <div class="row">    
+                        <div class="form-group col-md-12">    
+                          <input type="number" class="form-control" name="count" placeholder="Counts" required>    
+                        </div>   
+                      </div>
+                        <div class="row">    
+                            <div class="form-group col-md-12">    
+                              <input type="number" class="form-control" name="sale" placeholder="Sales Till date" required>    
+                            </div>   
+                        </div>
+                        <div class="row">    
+                            <div class="form-group col-md-12">    
+                                <input type="text" class="form-control" name="rating" placeholder="Ratings w.r sales" required> 
+                            </div>   
+                        </div>
+                       
+                </div>    
+                <button type="submit">Submit</button>    
+              </form>     
+        </div>    
+      </div>    
+    </center>    
+    <br>    
+    <%if(data.length>0){%>    
+        <center>    
+        <div style="width:auto; border-style: solid;border-color: black;">    
+        <table class="table table-border table-hover">    
+            <thead class="bg-warning">    
+                <tr>    
+                    <th>    
+                        s.no    
+                    </th>    
+                    <th>    
+                        Author    
+                    </th>    
+                    <th>    
+                        Books    
+                    </th>  
+                    <th>
+                        Counts
+                    </th>  
+                    <th>
+                        Sales
+                    </th>
+                    <th>
+                        Ratings
+                    </th>
+                </tr>    
+            </thead>    
+            <tbody>    
+                <%for(var i=0;i< data.length;i++){%>    
+                <tr>    
+                    <td>    
+                        <%=i+1%>    
+                    </td>    
+                    <td>    
+                     <%=data[i].author%>    
+                    </td>    
+                    <td>    
+                      <%=data[i].books%>    
+                    </td>    
+                    <td>
+                        <%=data[i].counts%> 
+                    </td>
+                    
+                    <td>
+                        <%=data[i].sales%> 
+                    
+    
+                </td>
+                <td>
+                    <%=data[i].ratings%> 
+                
+
+            </td>
+                </tr>    
+                <%}%>    
+            </tbody>    
+        </table>
+       
+         </center>    
+         <%}%>     
+    </div>    
+      
+             
+    </div>    
+<%-include('../partial/footer')-%>    
